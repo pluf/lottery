@@ -11,6 +11,13 @@ return array(
         )
     ),
     // ************************************************************* Account
+    array( // Create
+        'regex' => '#^/accounts$#',
+        'model' => 'Lottery_Views_Account',
+        'method' => 'createAccount',
+        'http-method' => 'POST',
+        'precond' => array()
+    ),
     array( // Read (list)
         'regex' => '#^/accounts$#',
         'model' => 'Pluf_Views',
