@@ -1,0 +1,17 @@
+{
+	"name": "Lottery",
+	"title": "Simple Lottery Games",
+	"model": [
+		"Lottery_Bet",
+		"Lottery_BetMeta",
+		"Lottery_BetSecMeta",
+		"Lottery_Account",
+		"Lottery_Profile",
+		"Lottery_Wallet",
+		"Lottery_Refferal"
+	],
+	"init": {
+		"User_Role": [],
+		"Monitor_Metric": [	]
+	}
+}
