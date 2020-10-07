@@ -69,4 +69,26 @@ ALTER TABLE `lottery_profiles`
    FOREIGN KEY (`account_id`) 
    REFERENCES `user_accounts` (`id`);
    
+CREATE TABLE `lottery_referrals` (
+  `id` mediumint(9) unsigned NOT NULL AUTO_INCREMENT,
+  `code` varchar(256) NOT NULL DEFAULT '',
+  `account_id` mediumint(9) unsigned NOT NULL DEFAULT 0,
+  `referral_id` mediumint(9) unsigned NOT NULL DEFAULT 0,
+  `tenant` mediumint(9) unsigned NOT NULL DEFAULT 0,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `code_unique_idx` (`tenant`,`code`),
+  KEY `account_foreignkey_idx` (`tenant`,`account_id`),
+  KEY `referral_foreignkey_idx` (`tenant`,`referral_id`),
+  KEY `tenant_foreignkey_idx` (`tenant`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+ALTER TABLE `lottery_referrals` 
+   ADD CONSTRAINT `fk__account_of_lottery_referral` 
+   FOREIGN KEY (`account_id`) 
+   REFERENCES `user_accounts` (`id`);
+   
+ALTER TABLE `lottery_referrals` 
+   ADD CONSTRAINT `fk__referral_id_of_lottery_referral` 
+   FOREIGN KEY (`referral_id`) 
+   REFERENCES `lottery_referrals` (`id`);
    
