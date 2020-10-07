@@ -167,8 +167,8 @@ m2=1</panel_attributes>
 Referral
 --
 id: Long
-referral_id: Long
-referred_id: Long</panel_attributes>
+code: String
+referral_id: Long</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
