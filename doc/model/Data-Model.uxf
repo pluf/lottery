@@ -14,9 +14,10 @@ Bet
 --
 id: Long
 game: String
-ante: Float
+bet: Float
 reward: Float
-is_win: Boolean</panel_attributes>
+is_win: Boolean
+state: String</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
