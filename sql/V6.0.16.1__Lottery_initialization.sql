@@ -2,10 +2,12 @@
 CREATE TABLE `lottery_bets` (
   `id` mediumint(9) unsigned NOT NULL AUTO_INCREMENT,
   `game` varchar(128) NOT NULL DEFAULT '',
-  `state` varchar(64) NOT NULL DEFAULT '',
+  `state` varchar(64) DEFAULT '',
   `bet` decimal(32,8) NOT NULL DEFAULT 0.0,
   `reward` decimal(32,8) DEFAULT 0.0,
   `is_win` tinyint(1) NOT NULL DEFAULT 0,
+  `creation_dtime` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `modif_dtime` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `account_id` mediumint(9) unsigned NOT NULL DEFAULT 0,
   `tenant` mediumint(9) unsigned NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`),
