@@ -1,3 +1,45 @@
 {
-	"name" : "pluf/lottery"
+	"name" : "pluf/lottery",
+	"version" : "6.0.16",
+	"description" : "Simple lottery games",
+	"type" : "library",
+	"license" : "MIT",
+	"minimum-stability" : "stable",
+	"require" : {
+		"pluf/core" : "6.x",
+		"pluf/tenant" : "6.x",
+		"pluf/workflow" : "6.x"
+	},
+	"require-dev" : {
+		"pluf/test" : "6.x"
+	},
+	"homepage" : "https://gitlab.com/microlottery/lottery",
+	"support" : {
+		"email" : "info@pluf.ir",
+		"issues" : "https://github.com/pluf/lottery/issues",
+		"wiki" : "https://github.com/pluf/lottery/wiki",
+		"source" : "https://github.com/pluf/lottery"
+	},
+	"keywords" : [
+		"pluf",
+		"lottery",
+		"game",
+		"bet"
+	],
+	"include-path" : [
+		"src/"
+	],
+	"autoload" : {
+		"psr-4" : {
+			"Pluf\\Lottery\\" : "src6"
+		},
+		"psr-0" : {
+			"" : "src"
+		}
+	},
+	"autoload-dev" : {
+		"psr-4" : {
+			"Pluf\\Test\\" : "tests"
+		}
+	}
 }
