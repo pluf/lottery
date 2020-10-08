@@ -31,7 +31,12 @@ class Lottery_Views_Bet
         // }
         // $bet->update();
         $game = $bet->getGame();
-        $game->apply($bet, 'create');
+        $game->apply($bet, 'init');
+        
+        if(array_key_exists('autoplay', $request->REQUEST)){
+            $action = $request->REQUEST['autoplay'];
+            $game->apply($bet, $action);
+        }
         return $bet;
     }
 
@@ -45,11 +50,8 @@ class Lottery_Views_Bet
     public static function find($request, $match)
     {
         $bet = new Lottery_Bet();
-        $game = $bet->getGame();
-        $sql = $game->createBetFilter($request);
         $builder = new Pluf_Paginator_Builder($bet);
         return $builder->setRequest($request)
-            ->setWhereClause($sql)
             ->build();
     }
 

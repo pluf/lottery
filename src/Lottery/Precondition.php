@@ -89,6 +89,19 @@ class Lottery_Precondition
         throw new \Pluf\Exception('you do not have permission', 4005, null, 400, 
                 '', 'you do not have permission');
     }
+
+    static public function ownerRequired ($request)
+    {
+        $res = Lottery_Precondition::loginRequired($request);
+        if (true !== $res) {
+            return $res;
+        }
+        if ($request->user->hasPerm('tenant.owner')) {
+            return true;
+        }
+        throw new Pluf_Exception_PermissionDenied();
+    }
+
     
     static public function isOwner ($request)
     {

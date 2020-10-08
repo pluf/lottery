@@ -107,4 +107,20 @@ class Lottery_Bet extends Pluf_Model
         }
         $this->modif_dtime = gmdate('Y-m-d H:i:s');
     }
+    
+    /**
+     * Returns the game of the bet.
+     *
+     * @return Lottery_Game_GameInterface
+     */
+    function getGame()
+    {
+        $gameClassName = $this->game;
+        if (! isset($gameClassName) || empty($gameClassName)) {
+            throw new Pluf_Exception_SettingError('game of the bet is not set!');
+        }
+        $gameClassName = 'Lottery_Game_' . $gameClassName;
+        return new $gameClassName();
+    }
+    
 }

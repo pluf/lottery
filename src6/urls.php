@@ -3,9 +3,7 @@ $paths = array(
     'urls/account.php',
     'urls/profile.php',
     'urls/wallet.php',
-    'urls/bet.php',
-    'urls/bet_meta.php',
-    'urls/referral.php'
+    'urls/bet.php'
 );
 
 $api = array();
