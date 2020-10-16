@@ -38,7 +38,7 @@ class Lottery_Wallet extends Pluf_Model
                 'blank' => false,
                 'is_null' => false,
                 'size' => 50,
-                'default' => 'CoinCodile',
+                'default' => 'coincodile',
                 'editable' => false,
                 'readable' => false
             ),

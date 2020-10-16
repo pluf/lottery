@@ -11,15 +11,15 @@ return array(
         )
     ),
     // ************************************************************* Wallet
-    array( // Create
-        'regex' => '#^/wallets$#',
-        'model' => 'Lottery_Views_Wallet',
-        'method' => 'create',
-        'http-method' => 'POST',
-        'precond' => array(
-            'User_Precondition::loginRequired'
-        )
-    ),
+//     array( // Create
+//         'regex' => '#^/wallets$#',
+//         'model' => 'Lottery_Views_Wallet',
+//         'method' => 'create',
+//         'http-method' => 'POST',
+//         'precond' => array(
+//             'User_Precondition::loginRequired'
+//         )
+//     ),
     array( // Read (list)
         'regex' => '#^/wallets$#',
         'model' => 'Lottery_Views_Wallet',

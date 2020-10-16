@@ -35,7 +35,7 @@ class Lottery_Views_Wallet extends Pluf_Views
         $wallet = new Lottery_Wallet();
         $wallet->_a['cols']['currency']['editable'] = true;
         $wallet->_a['cols']['owner_id']['editable'] = true;
-        $request->REQUEST['currency'] = 'CoinCodile';
+        $request->REQUEST['currency'] = 'coincodile';
         $request->REQUEST['owner_id'] = $request->user->id;
         Pluf::loadFunction('Pluf_Shortcuts_GetFormForModel');
         $form = Pluf_Shortcuts_GetFormForModel($wallet, $request->REQUEST);
@@ -51,7 +51,8 @@ class Lottery_Views_Wallet extends Pluf_Views
     public function find($request, $match)
     {
         $p = array(
-            'model' => 'Lottery_Wallet'
+            'model' => 'Lottery_Wallet',
+            'sql' => 'currency="coincodile"'
         );
         if (!User_Precondition::isOwner($request)) {
             $where = new Pluf_SQL('`owner_id`=%s', array(
