@@ -1,6 +1,6 @@
 {
 	"name" : "pluf/lottery",
-	"version" : "6.0.21",
+	"version" : "6.0.22",
 	"description" : "Simple lottery games",
 	"type" : "library",
 	"license" : "MIT",
